@@ -5,61 +5,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
     <title>My HTML5 Project</title>
+
+
 </head>
 
 <body>
     <h1>Grade calculator</h1>
+    <div id="div1">DIV 1</div>
+    <div id="div2">DIV 2</div>
+    <div class="class1">DIV 3.1</div>
+    <div class="class1">DIV 3.2</div>
+    <div class="class1">DIV 3.3</div>
+    <div class="class2">DIV 4</div>
 
+
+    <!--script src="script.js"-->
+    <script>
+        console.log(document.getElementById("div1"));
+        console.log(document.getElementById("div1").innerHTML);
+
+        document.getElementById("div1").innerHTML = "New Text";
+        //Altering the content of an element
+
+        let array = document.getElementsByClassName("class1");
+        for (i = 0; i != 3; i++) {
+            console.log(array[i]);
+        }
+        //selecting and printing all elements of a given class (html collection)
+
+
+        let array2 = document.getElementsByTagName("div");
+        for (i = 0; i != 6; i++) {
+            console.log(array2[i]);
+        }
+        //selecting and printing all elements of a given type (html collection)
+
+
+        console.log(document.querySelector("#div1"));
+        //selecting first found element by simple query (# = id) 
+        console.log(document.querySelector(".class1"));
+        //selecting first found element by simple query (. = class)
+        console.log(document.querySelectorAll(".class1"))
+        //selecting all elements by simple query
+
+
+
+
+    </script>
 </body>
 
 </html>
-
-<script>
-    //Outputs:
-    alert("Hi! I'm practicing javascript!")
-    //console.log("Batata")
-    //document.write("Nutella!" + '<br>')
-
-    //Input:
-    const studentName = prompt("Insert student name");
-    let gradeList = [null, null, null, null];
-    let total = 0;
-
-    for (i in gradeList) {
-        console.log(i);
-        gradeList[i] = parseInt(prompt("Insert grade number " + (i + 1)));
-        console.log(gradeList[i]);
-        total += gradeList[i];
-    };
-
-    //for (var i = 0; i < gradeList.length; i++) {
-    //    console.log(i);
-    //    gradeList[i] = parseInt(prompt("Insert grade number " + (i + 1)));
-    //    console.log(gradeList[i]);
-    //    total += gradeList[i];
-    //};
-
-    const mean = total / gradeList.length;
-
-    //const grade1 = parseInt(prompt("Insert first grade"));
-    //const grade2 = parseInt(prompt("Insert second grade"));
-    //const grade3 = parseInt(prompt("Insert third grade"));
-    //const grade4 = parseInt(prompt("Insert fourth grade"));
-    //const total = grade1 + grade2 + grade3 + grade4;
-
-
-    document.write(`The sum of all grades is ${total}` + "<br>");
-    document.write(`The mean is ${mean}` + "<br>");
-
-    if (mean >= 50) {
-        document.write(`Kudos to ${studentName}! They passed the class.`);
-    } else {
-        document.write(`Unfortunately for ${studentName}, they failed the class.`);
-    }
-
-//Obs1.: the prompt function always returns a string.
-//Obs2.: you can parse a variable to int using parseInt, to float using parseFloat
-//Obs3.: you can use document.write to break a line using <br>
-
-</script>
